@@ -1,0 +1,12 @@
+- @page_title = "New Network"
+
+%ol.breadcrumb
+  %li= link_to "Home", controller: 'access', action: 'index'
+  %li= link_to "Networks", action: 'index'
+  %li.active New
+
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Create Network
+  .panel-body
+    = render 'form'

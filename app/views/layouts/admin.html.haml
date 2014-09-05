@@ -1,0 +1,23 @@
+!!!
+
+%html
+  %head
+    %title Simple LMS | #{@page_title || "Admin"}
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      #header
+        %h1 Simple LMS Admin
+
+      #main
+        - if !flash[:notice].blank?
+          .alert.alert-info= flash[:notice]
+
+        .content
+          = yield
+
+    .footer
+      .container
+        %p.text-muted{ style: "text-align: right; font-size: .8em;" } LMS &copy; 2014 | JEA

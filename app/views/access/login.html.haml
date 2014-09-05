@@ -1,0 +1,23 @@
+- @page_title = "Admin Login"
+
+.container{ style: "padding-top: 60px; width: 50%;" }
+  .panel.panel-default
+    .panel-heading{style: "background: #ddd;" }
+      %h4 Please log in
+
+    .panel-body
+      = form_tag(action: 'attempt_login', class: 'form-signin', role: 'form') do
+
+        .form-group
+          =label_tag(:username)
+          = text_field_tag(:username, nil, class: 'form-control', required: "")
+
+        .form-group
+          =label_tag(:password)
+          = password_field_tag(:password, nil, class: 'form-control', required: "")
+
+        .form-group
+          = submit_tag("Log In", action: 'root', class: 'btn btn-primary btn-block')
+
+    .panel-footer.disabled{style: "font-size: .8em; text-align: right;"}
+      Load Management System &copy; 2014 | JEA

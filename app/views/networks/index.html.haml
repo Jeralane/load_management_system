@@ -1,0 +1,20 @@
+- @page_title = "Networks"
+
+%ol.breadcrumb
+  %li= link_to "Home", controller: 'access', action: 'index'
+  %li.active Networks
+
+%p
+  = link_to("Add new network", { action: 'new' }, class: 'btn btn-default btn-sm', role: 'button')
+
+%table.table
+  %tr
+    %th Name
+    %th Action
+
+  - @networks.each do |network|
+    %tr
+      %td= network.name
+      %td
+        =link_to "Edit", edit_network_path(network)
+        =link_to "Delete", network, method: :delete, data: { confirm: 'Delete selected record?' }
