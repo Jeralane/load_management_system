@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'customers/index'
+
+  get 'customers/edit'
+
+  get 'customers/destroy'
+
+  get 'customers/update'
+
+  get 'customers/create'
+
   resources :books
 
   resources :networks do

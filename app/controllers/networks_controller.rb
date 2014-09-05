@@ -2,7 +2,7 @@ class NetworksController < ApplicationController
   layout 'admin'
 
   def index
-    @networks = Network.all
+    @networks = Network.all.order(:name)
   end
 
   def new
