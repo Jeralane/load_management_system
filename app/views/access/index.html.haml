@@ -6,10 +6,16 @@
 .row
   .aside.col-md-3
     %ul.nav.nav-pills.nav-stacked
-      %li= link_to "Manage Networks", controller: 'networks', action: 'index'
-      %li= link_to "Manage Products", '#'
-      %li= link_to "Manage Customers", '#'
-      %li= link_to "Manage Transactions", '#'
+      - if session[:admin]
+        %li= link_to "Manage Networks", controller: 'networks', action: 'index'
+        %li= link_to "Manage Products", '#'
+        %li= link_to "Manage Customers", '#'
+        %li= link_to "Manage Transactions", '#'
+      - else
+        %li= link_to "View Profile", '#'
+        %li= link_to "Manage Sims", '#'
+        %li= link_to "View Transactions", '#'
+
       %li= link_to "Logout", action: 'logout'
 
   .article.col-md-9

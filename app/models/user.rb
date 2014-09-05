@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates :username, 
     presence: true,
-    length: { within: 8..25 },
+    length: { within: 4..25 },
     uniqueness: true,
     exclusion: { in: %w(admin superuser) }
 

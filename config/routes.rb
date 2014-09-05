@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   root 'access#index'
+
   get 'login', to: "access#login"
   get 'admin', to: "access#index"
 

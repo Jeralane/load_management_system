@@ -9,8 +9,7 @@
   %body
     .container
       #header
-        %h1 Simple LMS Admin
-
+        %h1= " Simple LMS : #{session[:admin] ? "Admin" : session[:username]}"
       #main
         - if !flash[:notice].blank?
           .alert.alert-info= flash[:notice]
