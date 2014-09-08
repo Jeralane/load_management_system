@@ -1,2 +1,12 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+- @page_title = "Edit Product"
+
+%ol.breadcrumb
+  %li= link_to "Home", controller: 'access', action: 'index'
+  %li= link_to "Products", action: 'index'
+  %li.active Edit
+
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Edit Product
+  .panel-body
+    = render 'form'
