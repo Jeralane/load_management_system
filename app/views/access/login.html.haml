@@ -1,5 +1,8 @@
 - @page_title = "Admin Login"
 
+- flash.each do |key, value|
+  .alert.alert-warning #{value}
+
 .container{ style: "padding-top: 60px; width: 50%;" }
   .panel.panel-default
     .panel-heading{style: "background: #ddd;" }
