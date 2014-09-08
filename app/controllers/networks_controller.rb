@@ -5,6 +5,10 @@ class NetworksController < ApplicationController
     @networks = Network.all.order(:name)
   end
 
+  def show
+    @network = Network.find(params[:id])
+  end
+
   def new
     @network = Network.new
   end
