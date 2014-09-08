@@ -12,9 +12,8 @@ Rails.application.routes.draw do
 
   resources :books
 
-  resources :networks do
-    resources :products
-  end
+  resources :networks
+  resources :products
 
   root 'access#index'
 
