@@ -2,17 +2,18 @@
 
 %html
   %head
-    %title Simple LMS | #{@page_title || "Admin"}
+    %title LMS | #{@page_title || "Admin"}
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if !flash[:notice].blank?
+      .alert.alert-info= flash[:notice]
+
     .container
       #header
-        %h1= " Simple LMS : #{session[:admin] ? "Admin" : session[:username]}"
+        %h1= " LMS : #{session[:admin] ? "Admin" : session[:username]}"
       #main
-        - if !flash[:notice].blank?
-          .alert.alert-info= flash[:notice]
 
         .content
           = yield
