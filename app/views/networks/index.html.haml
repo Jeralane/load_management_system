@@ -16,5 +16,8 @@
     %tr
       %td= network.name
       %td
+        =link_to "Show", network_path(network)
+        |
         =link_to "Edit", edit_network_path(network)
+        |
         =link_to "Delete", network, method: :delete, data: { confirm: 'Delete selected record?' }
