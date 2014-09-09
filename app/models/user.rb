@@ -29,4 +29,7 @@ class User < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  def full_name
+    [last_name, first_name].join(', ')
+  end
 end

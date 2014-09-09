@@ -9,7 +9,7 @@
       - if session[:admin]
         %li= link_to "Manage Networks", controller: 'networks', action: 'index'
         %li= link_to "Manage Products", controller: 'products', action: :index 
-        %li= link_to "Manage Customers", '#'
+        %li= link_to "Manage Users", controller: 'users', action: :index
         %li= link_to "Manage Transactions", '#'
       - else
         %li= link_to "View Profile", '#'

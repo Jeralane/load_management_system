@@ -1,0 +1,21 @@
+- @page_title = "Users"
+
+%ol.breadcrumb
+  %li= link_to "Home", controller: 'access', action: 'index'
+  %li.active Users
+
+%p
+  = link_to("Add new user", { action: 'new' }, class: 'btn btn-default btn-sm', role: 'button')
+
+%table.table
+  %tr
+    %th Name
+    %th Action
+
+  - @users.each do |user|
+    %tr
+      %td= user.full_name
+      %td
+        =link_to "Edit", edit_user_path(user)
+        |
+        =link_to "Delete", user, method: :delete, data: { confirm: 'Delete selected record?' }

@@ -1,20 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'customers/index'
-
-  get 'customers/edit'
-
-  get 'customers/destroy'
-
-  get 'customers/update'
-
-  get 'customers/create'
-
-  resources :books
-
-  resources :networks
+  resources :users
   resources :products
-
+  resources :networks
   root 'access#index'
 
   get 'login', to: "access#login"
