@@ -10,11 +10,13 @@
 %table.table
   %tr
     %th Name
+    %th Email
     %th Action
 
   - @users.each do |user|
     %tr
       %td= user.full_name
+      %td= user.email
       %td
         =link_to "Edit", edit_user_path(user)
         |
